@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Page Title</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <link href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" rel="stylesheet" integrity="sha384-lidBvvi7oLJ2j9e3nFlBSXfo+giBJ9L7QnUdgjc3AvLiynS0HdKEEEZtvZ4izE46" crossorigin="anonymous"> 
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha384-NXgwF8Kv9SSAr+jemKKcbvQsz+teULH/a5UNJvZc6kP47hZgl62M1vGnw6gHQhb1" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js" integrity="sha384-AenwROccLjIcbIsJuEZmrLlBzwrhvO94q+wm9RwETq4Kkqv9npFR2qbpdMhsehX3" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  
+
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript" src="demo.js"></script>
+
+  <style>
+    .editableCell:hover {
+      background-color: #d0e5d0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div style="border-radius: 25px; border: 2px solid #007FFF; padding: 20px; font-family: Arial, Helvetica, sans-serif;">
+  
+  <table>
+    <thead>
+      <tr>
+          <th align="left" style="width:500px;"><h3>Detalles del Pedido de Compra</h3></th>
+          <th align="left"><h3>Partidas Involucradas</h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top">
+          <table class="display">
+            <tr>
+              <td align="right">Creada por:</td>
+              <td><b>Juan Perez</b></td>
+            </tr>
+            <tr>
+              <td align="right">Creada el día:</td>
+              <td><b>24/03/2025</b></td>
+            </tr>
+            <tr>
+              <td align="right">Unidad Organizacional:</td>
+              <td><b>Rentas</b></td>
+            </tr>
+            <tr>
+              <td align="right">Aprobado por:</td>
+              <td><b>Pedro Gomez (Director de Rentas)</b></td>
+            </tr>
+            <tr>
+              <td align="right">Aprobado el día:</td>
+              <td><b>01/04/2025</b></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table id="partidas" class="display">
+            <thead>
+                  <tr>
+                      <th>Partida</th>
+                      <th>Disponible</th>
+                  </tr>
+              </thead>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><br>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Pedido de Compras</a></li>
+    <li><a href="#tabs-2">Ordenes de Compras y Licitaciones</a></li>
+  </ul>
+  <div id="tabs-1">
+    <table id="myTable" class="display">
+      <thead>
+        <tr>
+            <th><input id="selectall" type="checkbox" class="select-checkbox"></th>
+            <th>Item</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Proveedor</th>
+            <th>Partida</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Total:</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+      </tfoot>
+    </table>
+    <div id="bOrders">
+      <button class="ui-button ui-widget ui-corner-all" onclick="addToOrden('NEW')">Crear orden de compra</button>
+    </div>
+  </div>
+  <div id="tabs-2"></div>
+</div>
+
+
+
+</body>
+</html>
